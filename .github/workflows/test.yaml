@@ -25,5 +25,23 @@ jobs:
         with:
           python-version: "3.11.0-beta.4"
           cache: pip
-
-
+  fix-self-hosted:
+    runs-on:
+      - self-hosted
+      - X64
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Pytuhon
+        uses: techman83/setup-python@fix/tool_path
+        with:
+          python-version: "3.11.0-beta.4"
+          cache: pip
+  test-hosted:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Pytuhon
+        uses: techman83/setup-python@fix/tool_path
+        with:
+          python-version: "3.11.0-beta.4"
+          cache: pip
