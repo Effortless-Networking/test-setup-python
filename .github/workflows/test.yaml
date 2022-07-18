@@ -1,0 +1,29 @@
+name: Test
+
+on:
+  push:
+jobs:
+  version400:
+    runs-on:
+      - self-hosted
+      - X64
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4.0.0
+        with:
+          python-version: "3.11.0-beta.4"
+          cache: pip
+  version410:
+    runs-on:
+      - self-hosted
+      - X64
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4.1.0
+        with:
+          python-version: "3.11.0-beta.4"
+          cache: pip
+
+
