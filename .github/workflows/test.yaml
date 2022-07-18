@@ -35,7 +35,7 @@ jobs:
       - X64
     steps:
       - uses: actions/checkout@v3
-      - name: Setup Pytuhon
+      - name: Setup Python
         uses: techman83/setup-python@fix/tool_path
         with:
           python-version: "3.11.0-beta.4"
@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Setup Pytuhon
+      - name: Setup Python
         uses: techman83/setup-python@fix/tool_path
         with:
           python-version: "3.11.0-beta.4"
@@ -59,7 +59,7 @@ jobs:
       - X64
     steps:
       - uses: actions/checkout@v3
-      - name: Setup Pytuhon
+      - name: Setup Python
         env:
           AGENT_TOOLSDIRECTORY: '/tmp/toolpath'
         uses: techman83/setup-python@fix/tool_path
@@ -72,7 +72,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Setup Pytuhon
+      - name: Setup Python
         uses: techman83/setup-python@fix/tool_path
         env:
           AGENT_TOOLSDIRECTORY: '/tmp/toolpath'
