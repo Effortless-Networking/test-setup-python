@@ -3,79 +3,14 @@ name: Test
 on:
   push:
 jobs:
-  version400:
-    runs-on:
-      - self-hosted
-      - X64
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Python
-        uses: actions/setup-python@v4.0.0
-        with:
-          python-version: "3.11.0-beta.4"
-          cache: pip
-      - name: Python Version
-        run: python --version
-  version410:
-    runs-on:
-      - self-hosted
-      - X64
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Python
-        uses: actions/setup-python@v4.1.0
-        with:
-          python-version: "3.11.0-beta.4"
-          cache: pip
-      - name: Python Version
-        run: python --version
-  fix-self-hosted:
-    runs-on:
-      - self-hosted
-      - X64
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Python
-        uses: techman83/setup-python@fix/tool_path
-        with:
-          python-version: "3.11.0-beta.4"
-          cache: pip
-      - name: Python Version
-        run: python --version
-  test-hosted:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Python
-        uses: techman83/setup-python@fix/tool_path
-        with:
-          python-version: "3.11.0-beta.4"
-          cache: pip
-      - name: Python Version
-        run: python --version
-  test-agent-self-hosted:
-    runs-on:
-      - self-hosted
-      - X64
+  test-agent-mac:
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
       - name: Setup Python
         env:
           AGENT_TOOLSDIRECTORY: '/tmp/toolpath'
         uses: techman83/setup-python@fix/tool_path
-        with:
-          python-version: "3.11.0-beta.4"
-          cache: pip
-      - name: Python Version
-        run: python --version
-  test-agent-hosted:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Python
-        uses: techman83/setup-python@fix/tool_path
-        env:
-          AGENT_TOOLSDIRECTORY: '/tmp/toolpath'
         with:
           python-version: "3.11.0-beta.4"
           cache: pip
